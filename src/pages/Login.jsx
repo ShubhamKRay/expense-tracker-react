@@ -1,42 +1,55 @@
 import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import "../css/Login.css";
 
 function Login() {
+  const navigate = useNavigate();
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
+  function handleLogin(e) {
+    e.preventDefault();
 
-  function handleLogin() {
-    console.log(email);
+    if (!email || !password) {
+      alert("Please fill all fields");
+      return;
+    }
 
-    console.log(password);
+    console.log({ email, password });
+
+    navigate("/dashboard");
   }
 
   return (
-    <div className="login-container">
-      <h1>My Expense Tracker</h1>
-      <p>Login to your account</p>
+    <div className="login-page">
+      <form className="login-card" onSubmit={handleLogin}>
+        <h1>Expense Tracker</h1>
+        <p>Welcome Back 👋</p>
 
-      <input
-        type="email"
-        placeholder="Enter Email"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-      />
+        <label>Email</label>
+        <input
+          type="email"
+          placeholder="Enter Email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+        />
 
-      <br />
-      <br />
+        <label>Password</label>
+        <input
+          type="password"
+          placeholder="Enter Password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+        />
 
-      <input
-        type="password"
-        placeholder="Enter Password"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-      />
-      <br />
-      <br />
+        <button type="submit">Sign In</button>
 
-      <button onClick={handleLogin}>Sign In</button>
+        <p className="register-text">
+          Don't have an account?
+          <Link to="/register"> Register</Link>
+        </p>
+      </form>
     </div>
   );
 }

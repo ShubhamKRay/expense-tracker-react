@@ -1,0 +1,14 @@
+.navbar {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, .1);
+}
+
+.user {
+    font-weight: bold;
+}

@@ -1,0 +1,12 @@
+.balance-card {
+    background: #2563eb;
+    color: white;
+    padding: 30px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+}
+
+.balance-card h1 {
+    margin-top: 15px;
+    font-size: 36px;
+}

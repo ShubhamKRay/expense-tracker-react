@@ -10,6 +10,8 @@ function App() {
       <Route path="/" element={<Login />} />
       <Route path="/register" element={<Register />} />
       <Route path="/dashboard" element={<Dashboard />} />
+      {/* <Route path="/wallet" element={<Wallet />} /> */}
+      {/* <Route path="/transactions" element={<Transactions />} /> */}
     </Routes>
   );
 }
